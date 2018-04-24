@@ -14,6 +14,7 @@ pipeline:
       - /data/maven:/root/.m2
     commands:
       - mvn -s $MAVEN_SETTINGS/settings.xml clean package docker:build
+    privileged: true
 
 #  rebuild-cache:
 #    image: drillster/drone-volume-cache
