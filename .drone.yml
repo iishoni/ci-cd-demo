@@ -1,31 +1,7 @@
 pipeline:
-#  restore-cache:
-#    image: drillster/drone-volume-cache
-#    restore: true
-#    mount:
-#      - /drone/.m2
-#    volumes:
-#      - /tmp/cache:/cache
-#    privileged: true
-
   build:
     image: iishoni/maven
     volumes:
-      - /data/maven:/root/.m2
+      - /data/maven:$MAVEN_CONFIG
     commands:
       - mvn -s $MAVEN_SETTINGS/settings.xml clean package docker:build
-
-#  rebuild-cache:
-#    image: drillster/drone-volume-cache
-#    rebuild: true
-#    mount:
-#      - /drone/.m2
-#    volumes:
-#      - /tmp/cache:/cache
-#    privileged: true
-
-
-
-
-
-
