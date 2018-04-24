@@ -1,9 +1,5 @@
 pipeline:
   build:
-#    image: anapsix/alpine-java
     image: maven:slim
     commands:
       - mvn -v
-
-#  publish:
-#    image: plugins/docker
