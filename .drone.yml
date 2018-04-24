@@ -1,11 +1,23 @@
 pipeline:
-#  docker:
-#    image: plugins/docker
-#    username: daixk1212
-#    password: dxk19911212
-#    repo: test
-#    tags: latest
+  restore-cache:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+      - /drone/.m2
+    volumes:
+      - /tmp/cache:/cache
+
   build:
-    image: iishoni-maven
+    image: iishoni/maven
+    environment:
+      - M2_HOME=/drone/.m2
     commands:
       - mvn -s $MAVEN_SETTINGS/settings.xml clean package docker:build
+
+  rebuild-cache:
+    image: drillster/drone-volume-cache
+    rebuild: true
+    mount:
+      - /drone/.m2
+    volumes:
+      - /tmp/cache:/cache
