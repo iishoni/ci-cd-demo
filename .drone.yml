@@ -6,6 +6,6 @@ pipeline:
 #    repo: test
 #    tags: latest
   build:
-    image: maven:slim
+    image: mymaven
     commands:
-      - mvn clean package -DskipTests -v /data/maven/repository:/root/.m2
+      - mvn clean
