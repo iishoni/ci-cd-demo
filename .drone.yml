@@ -11,4 +11,5 @@ pipeline:
 #      - target/*.war
 #    force_upload: true
   build:
+    image: anapsix/alpine-java
     command: echo 'hello'
