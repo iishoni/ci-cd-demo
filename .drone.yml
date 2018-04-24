@@ -13,4 +13,4 @@ pipeline:
   build:
     image: anapsix/alpine-java
     commands:
-      - echo 'hello'
+      - mvn clean
