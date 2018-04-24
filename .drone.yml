@@ -1,11 +1,11 @@
 pipeline:
-  docker:
-    image: plugins/docker
-    username: daixk1212
-    password: dxk19911212
-    repo: test
-    tags: latest
+#  docker:
+#    image: plugins/docker
+#    username: daixk1212
+#    password: dxk19911212
+#    repo: test
+#    tags: latest
   build:
     image: maven:slim
     commands:
-      - mvn clean package -DskipTests docker:build
+      - mvn clean package -DskipTests
