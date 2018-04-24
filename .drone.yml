@@ -6,6 +6,6 @@ pipeline:
 #    repo: test
 #    tags: latest
   build:
-    image: mymaven
+    image: iishoni-maven
     commands:
       - mvn clean
