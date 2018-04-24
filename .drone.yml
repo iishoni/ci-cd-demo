@@ -8,4 +8,4 @@ pipeline:
   build:
     image: iishoni-maven
     commands:
-      - mvn clean -s ${MAVEN_CONFIG}/settings.xml
+      - mvn clean -s $MAVEN_CONFIG/settings.xml
