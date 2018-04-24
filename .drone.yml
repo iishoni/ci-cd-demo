@@ -8,4 +8,4 @@ pipeline:
   build:
     image: maven:slim
     commands:
-      - -v "$(pwd)":/usr/src/mymaven -v /data/maven:/usr/share/maven/ref -w /usr/src/mymaven maven:slim mvn clean package -DskipTests
+      - docker run -it --rm --name ci-cd-demo -v "$(pwd)":/usr/src/mymaven -v /data/maven:/usr/share/maven/ref -w /usr/src/mymaven maven:slim mvn clean package -DskipTests
