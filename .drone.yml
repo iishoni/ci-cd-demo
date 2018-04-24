@@ -7,7 +7,8 @@ pipeline:
 #      - DOCKER_HOST=unix:///var/run/docker.sock
     commands:
       - mvn -s $MAVEN_SETTINGS/settings.xml clean package docker:build
-  docker:
-    image: plugins/docker
-    username: daixk1212
-    password: dxk?19911212
+  services:
+    docker:
+      image: plugins/docker
+      username: daixk1212
+      password: dxk?19911212
