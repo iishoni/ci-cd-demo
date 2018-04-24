@@ -12,4 +12,5 @@ pipeline:
 #    force_upload: true
   build:
     image: anapsix/alpine-java
-    command: echo 'hello'
+    commands:
+      - echo 'hello'
