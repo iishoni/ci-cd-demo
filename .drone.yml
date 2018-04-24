@@ -2,6 +2,6 @@ pipeline:
   build:
     image: iishoni/maven
     volumes:
-      - /data/maven:$MAVEN_CONFIG
+      - /data/maven:/root/.m2
     commands:
       - mvn -s $MAVEN_SETTINGS/settings.xml clean package docker:build
