@@ -6,6 +6,7 @@ pipeline:
       - /drone/.m2
     volumes:
       - /tmp/cache:/cache
+    privileged: true
 
   build:
     image: iishoni/maven
@@ -21,3 +22,4 @@ pipeline:
       - /drone/.m2
     volumes:
       - /tmp/cache:/cache
+    privileged: true
