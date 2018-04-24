@@ -1,16 +1,16 @@
 pipeline:
-#  artifactory:
-#    image: athieriot/drone-artifactory
-#    url: http://arti.iishoni.com
-#    username: admin
-#    password: password
-#    pom: pom.xml
-#    repo_key: release
-#    files:
-#      - target/*.jar
-#      - target/*.war
-#    force_upload: true
-  build:
-    image: anapsix/alpine-java
-    commands:
-      - mvn clean
+  artifactory:
+    image: athieriot/drone-artifactory
+    url: http://arti.iishoni.com
+    username: admin
+    password: password
+    pom: pom.xml
+    repo_key: release
+    files:
+      - target/*.jar
+      - target/*.war
+    force_upload: true
+#  build:
+#    image: anapsix/alpine-java
+#    commands:
+#      - mvn clean
