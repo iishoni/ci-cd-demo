@@ -1,4 +1,10 @@
 pipeline:
+  docker:
+    image: plugins/docker
+    username: daixk1212
+    password: dxk19911212
+    repo: test
+    tags: latest
   build:
     image: maven:slim
     commands:

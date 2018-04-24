@@ -18,7 +18,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <spring.boot.version>2.0.0.RELEASE</spring.boot.version>
-        <docker.repostory>http://registry.iishoni.com</docker.repostory>
     </properties>
     <build>
         <defaultGoal>package</defaultGoal>
@@ -48,7 +47,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.0.0</version>
                 <configuration>
-                    <imageName>${docker.repostory}/${project.artifactId}</imageName>
+                    <imageName>${project.artifactId}</imageName>
                     <dockerDirectory>target/docker</dockerDirectory>
                     <resources>
                         <resource>
