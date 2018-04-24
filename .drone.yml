@@ -8,4 +8,4 @@ pipeline:
   build:
     image: iishoni-maven
     commands:
-      - mvn clean -s $MAVEN_SETTINGS/settings.xml
+      - mvn -s $MAVEN_SETTINGS/settings.xml clean package docker:build
