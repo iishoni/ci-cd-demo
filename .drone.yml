@@ -7,7 +7,7 @@ pipeline:
     commands:
       - mvn -s $MAVEN_SETTINGS/settings.xml clean package -DskipTests docker:build
   deploy:
-    image: @project.artifactId@
+    image: ci-cd-demo
     volumes:
       - /app/cloud/logs/:/app/cloud/logs/
 #      - /var/run/docker.sock:/var/run/docker.sock
