@@ -42,29 +42,4 @@
             <version>1.7.0.RELEASE</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin><!-- docker打包插件 -->
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>1.0.0</version>
-                <configuration>
-                    <imageName>${project.artifactId}</imageName>
-                    <dockerDirectory>target/docker</dockerDirectory>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                    <imageTags>
-                        <!--<imageTag>${project.version}</imageTag>-->
-                        <imageTag>latest</imageTag>
-                    </imageTags>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
