@@ -3,8 +3,8 @@ pipeline:
     image: iishoni/maven
     volumes:
       - /data/maven:/root/.m2
-#    environment:
-#      - DOCKER_HOST=unix:///var/run/docker.sock
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
     commands:
       - mvn -s $MAVEN_SETTINGS/settings.xml clean package -DskipTests docker:build
 #    docker:
