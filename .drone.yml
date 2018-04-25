@@ -1,11 +1,11 @@
 pipeline:
   build:
-    image: iishoni/maven
+    image: quay.io/dxk19911212/iishoni-maven
     volumes:
       - /data/maven:/root/.m2
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - mvn -s $MAVEN_SETTINGS/settings.xml clean package docker:build -DpushImage
+      - mvn clean package docker:build -DpushImage
   deploy:
     image: ci-cd-demo
     volumes:
