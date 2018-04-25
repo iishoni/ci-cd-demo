@@ -10,6 +10,5 @@ pipeline:
     image: ci-cd-demo
     volumes:
       - /app/cloud/logs/:/app/cloud/logs/
-      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 8010:8010
