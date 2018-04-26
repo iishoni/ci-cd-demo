@@ -10,5 +10,5 @@ pipeline:
     image: quay.io/dxk19911212/ci-cd-demo
     volumes:
       - /app/cloud/logs/:/app/cloud/logs/
-    ports:
-      - 8080:8080
+    commands:
+      - docker run -dit --name ci-cd-demo -p 8080:8080 quay.io/dxk19911212/ci-cd-demo
