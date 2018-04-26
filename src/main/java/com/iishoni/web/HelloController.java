@@ -3,8 +3,8 @@ package com.iishoni.web;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/demo")
-public class DemoController {
+@RequestMapping("/hello")
+public class HelloController {
 
     @GetMapping("/{name}")
     public String hello(@PathVariable String name) {
