@@ -5,7 +5,7 @@ pipeline:
       - /data:/data
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - sh /data/clean.sh ci-cd-demo
+      - sh /data/shell/clean.sh ci-cd-demo
   build:
     image: quay.io/dxk19911212/iishoni-maven
     volumes:
@@ -16,9 +16,10 @@ pipeline:
   deploy:
     image: docker
     volumes:
+      - /data:/data
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker run -dit --name ci-cd-demo -v /app/cloud/logs:/app/cloud/logs -p 8080:8080 quay.io/dxk19911212/ci-cd-demo
+      - sh /data/shell/setup.sh ci-cd-demo
 #  publish:
 #    image: quay.io/dxk19911212/iishoni-maven
 #    volumes:
