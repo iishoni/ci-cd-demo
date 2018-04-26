@@ -11,4 +11,4 @@ pipeline:
     volumes:
       - /app/cloud/logs/:/app/cloud/logs/
     ports:
-      - 8010:8010
+      - 8080:8080
