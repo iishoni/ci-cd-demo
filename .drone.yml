@@ -5,11 +5,11 @@ pipeline:
       - /data/maven:/root/.m2
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - mvn -s $MAVEN_SETTINGS/settings.xml clean package docker:build -DpushImage
+      - mvn -s $MAVEN_SETTINGS/settings.xml clean package docker:build
+#      -DpushImage
   deploy:
-    image: ci-cd-demo
+    image: quay.io/dxk19911212/ci-cd-demo
     volumes:
       - /app/cloud/logs/:/app/cloud/logs/
     ports:
       - 8010:8010
-
