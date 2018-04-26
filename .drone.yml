@@ -7,8 +7,13 @@ pipeline:
 #    commands:
 #      - mvn -s $MAVEN_SETTINGS/settings.xml clean package dockerfile:build dockerfile:push
   deploy:
-    image: quay.io/dxk19911212/ci-cd-demo
+#    image: quay.io/dxk19911212/ci-cd-demo
+#    volumes:
+#      - /app/cloud/logs/:/app/cloud/logs/
+#    commands:
+#      - java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+    image: plugins/docker
     volumes:
-      - /app/cloud/logs/:/app/cloud/logs/
+      - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+      - docker run -dit --name ci-cd-demo -v /app/cloud/logs:/app/cloud/logs -p 8080:8080 quay.io/dxk19911212/ci-cd-demo
