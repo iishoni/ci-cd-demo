@@ -15,11 +15,11 @@ pipeline:
   deploy:
     image: docker
     volumes:
-      - /app/cloud/logs:/app/cloud/logs
+#      - /app/cloud/logs:/app/cloud/logs
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker run -dit --name ci-cd-demo -v /app/cloud/logs:/app/cloud/logs -p 8080:8080 quay.io/dxk19911212/ci-cd-demo
-      - cat /app/cloud/logs/ci-cd-demo.log
+      - docker run -dit --name ci-cd-demo -v /app/cloud/logs:/app/cloud/logs -p 8080:8080 quay.io/dxk19911212/ci-cd-demo & docker logs ci-cd-demo
+#      - cat /app/cloud/logs/ci-cd-demo.log
 #  publish:
 #    image: quay.io/dxk19911212/iishoni-maven
 #    volumes:
