@@ -1,2 +1,2 @@
 # ci-cd-demo
-[![Docker Repository on Quay](https://quay.io/repository/dxk19911212/ci-cd-demo/status "Docker Repository on Quay")](https://quay.io/repository/dxk19911212/ci-cd-demo)
+[![Docker Repository on Quay](https://quay.io/repository/dxk19911212/ci-cd-demo/status?token=5e7b57af-8df6-4843-8dbc-d5bab24c8fd8 "Docker Repository on Quay")](https://quay.io/repository/dxk19911212/ci-cd-demo)
