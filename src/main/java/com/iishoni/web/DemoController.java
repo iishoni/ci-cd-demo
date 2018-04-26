@@ -3,6 +3,7 @@ package com.iishoni.web;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/demo")
 public class DemoController {
 
     @GetMapping("/{name}")

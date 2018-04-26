@@ -6,8 +6,8 @@ Configuration:
       - name: log.level
         value: debug
       - name: log.path
-#        value: /Users/dxk/Documents/logs/
-        value: /app/cloud/logs/
+        value: /Users/dxk/Documents/logs/
+#        value: /app/cloud/logs/
       - name: project.name
         value: @project.artifactId@
       - name: log.pattern

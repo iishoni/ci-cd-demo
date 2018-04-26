@@ -5,8 +5,7 @@ pipeline:
       - /data/maven:/root/.m2
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - mvn -s $MAVEN_SETTINGS/settings.xml clean package dockerfile:build
-#      dockerfile:push
+      - mvn -s $MAVEN_SETTINGS/settings.xml clean package dockerfile:build dockerfile:push
   deploy:
     image: docker
     volumes:
