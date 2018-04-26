@@ -1,10 +1,10 @@
 pipeline:
-  clean:
-    image: docker
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    commands:
-      - sh clean.sh ci-cd-demo
+#  clean:
+#    image: docker
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    commands:
+#      - nohup sh clean.sh ci-cd-demo
   build:
     image: quay.io/dxk19911212/iishoni-maven
     volumes:
