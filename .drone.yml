@@ -12,7 +12,7 @@ pipeline:
 #      - /app/cloud/logs/:/app/cloud/logs/
 #    commands:
 #      - java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
-    image: plugins/docker
+#    image: plugins/docker
 #    volumes:
 #      - /var/run/docker.sock:/var/run/docker.sock
     commands:
