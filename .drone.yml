@@ -1,15 +1,14 @@
 pipeline:
-  build:
-    image: quay.io/dxk19911212/iishoni-maven
-    volumes:
-      - /data/maven:/root/.m2
-      - /var/run/docker.sock:/var/run/docker.sock
-    commands:
-      - mvn -s $MAVEN_SETTINGS/settings.xml clean package dockerfile:build
-#      dockerfile:push
+#  build:
+#    image: quay.io/dxk19911212/iishoni-maven
+#    volumes:
+#      - /data/maven:/root/.m2
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    commands:
+#      - mvn -s $MAVEN_SETTINGS/settings.xml clean package dockerfile:build dockerfile:push
   deploy:
     image: quay.io/dxk19911212/ci-cd-demo
     volumes:
       - /app/cloud/logs/:/app/cloud/logs/
     commands:
-      - docker run -dit --name ci-cd-demo -p 8080:8080 quay.io/dxk19911212/ci-cd-demo
+      - java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
