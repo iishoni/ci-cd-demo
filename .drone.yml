@@ -5,7 +5,7 @@ name: ci-java8
 volumes:
   - name: maven_local_repo
     host:
-      path: /mnt/data/maven_local_repo
+      path: /app/data/maven_local_repo
 
 steps:
   - name: build
