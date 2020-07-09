@@ -48,5 +48,5 @@ steps:
     settings:
       key:
         from_secret: serverchan_key
-      text: {消息标题1231231}
-      desp: {消息内容 支持MarkDown}
+      text: `部署{{ build.status }}`
+      desp: 耗时{{ since build.started }}, 点这里[查询]({{ build.link }})
