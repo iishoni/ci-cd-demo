@@ -14,8 +14,7 @@ steps:
       - name: maven_local_repo
         path: /root/.m2
     commands:
-      - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-      - mvn test -B
+      - mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true dockerfile:build
   - name: deploy
     image: appleboy/drone-ssh
     settings:
