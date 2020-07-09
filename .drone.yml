@@ -16,9 +16,7 @@ steps:
     commands:
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       - mvn test -B
-  - name: send-wechat
-    image: yakumioto/serverchan
-    settings:
-      key: SCU105056Tb5f8234eb38f74b7d4f52a91a4b580265f0761e462f36
-      text: hello world
-      desp: Send by ServerChan
+  - name: docker
+    image: plugins/docker
+    commands:
+      - docker-compose ps
