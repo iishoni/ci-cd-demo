@@ -27,6 +27,5 @@ steps:
       command_timeout: 30m
       script_stop: false
       script:
-        - cd ~ & docker-compose ps
-        - cat /app/test/deploy.sh
-        - cat /app/test/Dockerfile
+        - echo hello
+        - echo world
