@@ -16,3 +16,9 @@ steps:
     commands:
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       - mvn test -B
+  - name: send-wechat
+      image: yakumioto/serverchan
+      settings:
+        key: SCU48558T164ff96a3316d8a22cacea21d66b5caed80baa044
+        text: hello world
+        desp: Send by ServerChan
