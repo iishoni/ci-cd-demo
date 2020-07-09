@@ -30,3 +30,16 @@ steps:
       script:
         - echo hello
         - echo world
+  - name: notify
+    image: plugins/webhook
+    settings:
+      urls:
+        from_secret: notify_url
+      content_type: application/x-www-form-urlencoded
+      template: |
+        text=自动部署{{ build.status }}了&desp=在{{ repo.name }}的{{build.branch}}上{{ build.event }}了{{truncate build.commit 8}}的commit, 结果 `{{ build.status }}` 了, 耗时{{ since build.started }}, 点这里[查询]({{ build.link }})
+      debug: true
+    when: # 无论成功失败都运行
+      status:
+        - failure
+        - success
