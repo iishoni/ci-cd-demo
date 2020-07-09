@@ -19,6 +19,6 @@ steps:
   - name: send-wechat
       image: yakumioto/serverchan
       settings:
-        key: SCU48558T164ff96a3316d8a22cacea21d66b5caed80baa044
+        key: SCU105056Tb5f8234eb38f74b7d4f52a91a4b580265f0761e462f36
         text: hello world
         desp: Send by ServerChan
