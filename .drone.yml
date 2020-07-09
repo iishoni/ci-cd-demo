@@ -18,15 +18,15 @@ steps:
   - name: deploy
     image: appleboy/drone-ssh
     settings:
-      host: 112.13.201.108
-      username: root
-      password: Qaz2@wsx
-      port: 2022
-      command_timeout: 30m
+#      host: 112.13.201.108
+#      username: root
+#      password: Qaz2@wsx
+#      port: 2022
+      command_timeout: 3m
       script_stop: false
       script:
-        - echo hello
-        - echo world
+        - docker-compose ps
+        - echo hello world
 #  - name: notify
 #    image: plugins/webhook
 #    settings:
