@@ -18,13 +18,13 @@ steps:
   - name: deploy
     image: appleboy/drone-ssh
     settings:
-#      host: 112.13.201.108
-      host: iishoni.com
+      host: zhcw.yeexun.com.cn
+#      host: iishoni.com
       username:
         from_secret: ssh_account
       key:
         from_secret: ssh_key
-      port: 22
+      port: 2022
       command_timeout: 3m
       script_stop: false
       script:
@@ -48,6 +48,6 @@ steps:
       key:
         from_secret: serverchan_key
       text: |
-        部署{{ DRONE_BUILD_STATUS }}
+        部署{DRONE_BUILD_STATUS}
       desp: |
         耗时{{ since build.started }}, 点这里[查询]({{ build.link }})
