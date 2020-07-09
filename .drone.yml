@@ -19,5 +19,5 @@ steps:
   - name: docker
     image: plugins/docker
     commands:
-      - docker ps -a
+      - sudo docker ps -a
       - cat /app/test/deploy.sh
