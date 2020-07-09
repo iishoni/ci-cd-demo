@@ -15,20 +15,20 @@ steps:
         path: /root/.m2
     commands:
       - mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true
-  - name: deploy
-    image: appleboy/drone-ssh
-    settings:
-      host: zhcw.yeexun.com.cn
-#      host: iishoni.com
-      username:
-        from_secret: ssh_account
-      key:
-        from_secret: ssh_key
-      port: 2022
-      command_timeout: 3m
-      script_stop: false
-      script:
-        - docker-compose ps
+#  - name: deploy
+#    image: appleboy/drone-ssh
+#    settings:
+#      host: zhcw.yeexun.com.cn
+##      host: iishoni.com
+#      username:
+#        from_secret: ssh_account
+#      key:
+#        from_secret: ssh_key
+#      port: 2022
+#      command_timeout: 3m
+#      script_stop: false
+#      script:
+#        - docker-compose ps
 #  - name: notify
 #    image: plugins/webhook
 #    settings:
@@ -55,7 +55,7 @@ steps:
 ---
 kind: pipeline
 type: ssh
-name: default
+name: ssh-con
 
 server:
   host: 112.13.201.108
