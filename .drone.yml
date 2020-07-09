@@ -18,6 +18,7 @@ steps:
   - name: deploy
     image: appleboy/drone-ssh
     settings:
+      host: locahost
 #      host: 112.13.201.108
 #      username: root
 #      password: Qaz2@wsx
