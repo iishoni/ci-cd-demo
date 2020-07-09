@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: ci-java8
+name: ci-cd-demo
 
 volumes:
   - name: maven_local_repo
@@ -19,5 +19,5 @@ steps:
   - name: docker
     image: plugins/docker
     commands:
-#      - sudo docker ps -a
-      - cat /app/test/deploy.sh
+      - sudo docker ps -a
+#      - cat /app/test/deploy.sh
