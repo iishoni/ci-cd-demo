@@ -20,10 +20,11 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host: 112.13.201.108
-      username: root
+      username:
+        from_secret: ssh_account
+      password:
+        from_secret: ssh_password
       port: 2022
-      key:
-        from_secret: ssh_key
       command_timeout: 30m
       script_stop: false
       script:
