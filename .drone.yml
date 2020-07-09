@@ -15,20 +15,18 @@ steps:
         path: /root/.m2
     commands:
       - mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true
-#  - name: deploy
-#    image: appleboy/drone-ssh
-#    settings:
-#      host: 112.13.201.108
-#      username:
-#        from_secret: ssh_account
-#      password:
-#        from_secret: ssh_password
-#      port: 2022
-#      command_timeout: 30m
-#      script_stop: false
-#      script:
-#        - echo hello
-#        - echo world
+  - name: deploy
+    image: appleboy/drone-ssh
+    settings:
+      host: 112.13.201.108
+      username: root
+      password: Qaz2@wsx
+      port: 2022
+      command_timeout: 30m
+      script_stop: false
+      script:
+        - echo hello
+        - echo world
 #  - name: notify
 #    image: plugins/webhook
 #    settings:
@@ -48,6 +46,6 @@ steps:
       key:
         from_secret: serverchan_key
       text: |
-        部署{{ build.status }}
+        部署{{ DRONE_BUILD_STATUS }}
       desp: |
         耗时{{ since build.started }}, 点这里[查询]({{ build.link }})
