@@ -51,6 +51,7 @@ steps:
         部署{DRONE_BUILD_STATUS}
       desp: |
         耗时{{ since build.started }}, 点这里[查询]({{ build.link }})
+
 ---
 kind: pipeline
 type: ssh
@@ -60,8 +61,7 @@ server:
   host: 112.13.201.108
   user: root
   port: 2022
-  password:
-    from_secret: ssh_password
+  password: Qaz2@wsx
 
 steps:
   - name: greeting
