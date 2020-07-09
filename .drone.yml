@@ -48,5 +48,5 @@ steps:
     settings:
       key:
         from_secret: serverchan_key
-      text: `部署{{ build.status }}`
+      text: 部署{{ build.status }}
       desp: 耗时{{ since build.started }}, 点这里[查询]({{ build.link }})
