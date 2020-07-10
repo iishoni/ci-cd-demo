@@ -71,12 +71,11 @@ type: ssh
 name: default
 
 server:
-  host: 120.78.150.87
+  host: 112.13.201.108
   user: root
-  password: root@iishoni.2017
+  password: Qaz2@wsx
 
 steps:
   - name: greeting
     commands:
       - echo hello worldd
-
