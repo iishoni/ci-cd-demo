@@ -6,9 +6,9 @@ steps:
   # maven打包
   - name: build
     image: maven:3-jdk-8
-#    volumes:
-#      - name: maven_local_repo
-#        path: /root/.m2
+    volumes:
+      - name: maven_local_repo
+        path: /root/.m2
     commands:
       - mvn clean -Ptest package -DskipTests=true -Dmaven.javadoc.skip=true
 
@@ -16,10 +16,10 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      username:
-        from_secret: docker_user
-      password:
-        from_secret: docker_pwd
+      username: dxk19911212
+#        from_secret: docker_user
+      password: dxk?19911212
+#        from_secret: docker_pwd
       mirror: https://wm9kcxms.mirror.aliyuncs.com
       repo: registry.cn-hangzhou.aliyuncs.com/hbhb/ci-cd-demo
       registry: registry.cn-hangzhou.aliyuncs.com
@@ -68,7 +68,7 @@ steps:
     when:
       status: [failure, success]
 
-#volumes:
-#  - name: maven_local_repo
-#    host:
-#      path: /app/data/maven_local_repo
+volumes:
+  - name: maven_local_repo
+    host:
+      path: /app/data/maven_local_repo
