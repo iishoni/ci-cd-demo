@@ -71,9 +71,9 @@ type: ssh
 name: default
 
 server:
-  host: 112.13.201.108
+  host: 120.78.150.87
   user: root
-  password: Qaz2@wsx
+  password: root@iishoni.2017
 
 steps:
   - name: greeting
