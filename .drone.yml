@@ -43,7 +43,7 @@ steps:
       proxy_host: 120.78.150.87
       proxy_port: 22
       proxy_user: root
-      proxy_password: Qaz2@wsx
+      proxy_password: root@iishoni.2017
 
 # 钉钉通知
 #  - name: dingtalk
