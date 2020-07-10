@@ -71,4 +71,4 @@ steps:
 volumes:
   - name: maven_local_repo
     host:
-      path: /data/maven/repository
+      path: /data/maven
