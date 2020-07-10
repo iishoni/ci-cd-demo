@@ -8,8 +8,8 @@
     <version>1.0</version>
 
     <parent>
-        <groupId>com.iishoni</groupId>
-        <artifactId>abby-base</artifactId>
+        <groupId>com.hbhb</groupId>
+        <artifactId>hbhb-parent</artifactId>
         <version>1.0</version>
     </parent>
 
